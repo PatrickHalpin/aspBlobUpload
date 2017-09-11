@@ -1,0 +1,10 @@
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/test.Tests.dll
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/test.Tests.pdb
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/nunit.framework.dll
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/test.dll
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/test.pdb
+/Users/patrickhalpin/Projects/test/test.Tests/bin/Debug/nunit.framework.xml
+/Users/patrickhalpin/Projects/test/test.Tests/obj/Debug/test.Tests.csprojResolveAssemblyReference.cache
+/Users/patrickhalpin/Projects/test/test.Tests/obj/Debug/test.Tests.csproj.CoreCompileInputs.cache
+/Users/patrickhalpin/Projects/test/test.Tests/obj/Debug/test.Tests.dll
+/Users/patrickhalpin/Projects/test/test.Tests/obj/Debug/test.Tests.pdb
