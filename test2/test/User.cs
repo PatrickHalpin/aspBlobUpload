@@ -11,8 +11,10 @@ namespace test
         public string Ucountry;
         public string Udob;
         public string Unumber;
+        public string ImgUrl;
 
-        public User(string name, string address,string county, string country, string dob, string number)
+
+        public User(string name, string address,string county, string country, string dob, string number,string url)
         {
 			Uname = name;
             Uaddress =address;
@@ -20,12 +22,18 @@ namespace test
             Ucountry =country;
             Udob =dob;
             Unumber =number;
+            ImgUrl = url;
 		}
 
         public string getJson()
         {
             string json = JsonConvert.SerializeObject(this);
             return json;
+        }
+
+        public string getName()
+        {
+            return Uname;
         }
        
     }

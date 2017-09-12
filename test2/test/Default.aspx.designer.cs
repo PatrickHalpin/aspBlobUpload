@@ -15,7 +15,7 @@ namespace test {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
-		protected System.Web.UI.WebControls.FileUpload FileUpload1;
+		protected System.Web.UI.WebControls.FileUpload file;
 		
 		protected System.Web.UI.WebControls.TextBox name;
 		

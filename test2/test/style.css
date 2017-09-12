@@ -1,4 +1,106 @@
-﻿body 
+﻿
+body 
 {
+    background-color: #8EC5FC;
+    background-image: -webkit-linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-image: -moz-linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-image: -o-linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 
+
+.top 
+{
+    text-align: center;
+}
+
+.head {
+    color: white;
+}
+
+.mid
+ {
+    background-color: #280A2E;
+    margin-top: 3vh;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0px 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text 
+{
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+}
+
+.inputfile
+ {
+    transition: all .5s;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.inputfile + label 
+{
+	transition: all .5s;
+	font-size: 1.25em;
+	font-weight: 700;
+	color: white;
+	padding: 15px;
+	background-color: #64F06F;
+	display: inline-block;
+}
+.inputfile:focus + label, .inputfile + label:hover 
+{
+	transition: all .5s;
+	background-color: #f02D46;
+}
+
+.inputfile + label 
+{
+	transition: all .5s;
+	cursor: pointer;
+
+}
+
+.input 
+{
+    border: none;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.link
+ {
+    border: none;
+    padding: 3%;
+    padding-left: 9%;
+    padding-right: 9%;
+    background-color: #64F06F;
+    transition: all .5s;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover 
+{
+    background-color: #F02D46;
+    transition: all .5s;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+
+.img {
+    margin-top: 3%;
+}

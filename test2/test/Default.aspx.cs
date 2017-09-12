@@ -15,10 +15,13 @@ namespace test
     public partial class Default : System.Web.UI.Page
     {
         //Function for uploading file to blob
-        public void upload(object File,String FileName)
+        public void upload(object File,string FileName,string type)
         { 
             //Create Connection            var storageAccount = new CloudStorageAccount(            new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(             "phblobtest",           "5UV0NfyNudR3xKN+Q1ONDbp5e2Gool1E/fRI/HHGRXHeWvGJpwelYGE+F2xyVLNZ34USjREWDu2km1PuvxTQuw=="), true);
-           CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();             //Reference container           CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");             //Create blob and name it           CloudBlockBlob blockBlob = container.GetBlockBlobReference(FileName);             //upload file recently selected to blob           using (var fileStream = System.IO.File.OpenRead(FileName))           {               blockBlob.UploadFromStream(fileStream);
+           CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();             //Reference container           CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");             //Create blob and name it           CloudBlockBlob blockBlob = container.GetBlockBlobReference(FileName);
+            //set blob file type
+		  blockBlob.Properties.ContentType = type;
+            //upload file recently selected to blob           using (var fileStream = System.IO.File.OpenRead(FileName))           {               blockBlob.UploadFromStream(fileStream);
           }
 
 		}
@@ -33,27 +36,28 @@ namespace test
             string country = String.Format("{0}", Request.Form["country"]);
             string dob = String.Format("{0}", Request.Form["dob"]);
             string number = String.Format("{0}", Request.Form["number"]);
-
+            string url="https://phblobtest.blob.core.windows.net/mycontainer/"+file.FileName;
             //Create new user to store data
-            User user = new User(name,address,county,country,dob,number);
+            User user = new User(name,address,county,country,dob,number,url);
 			
             //call user json function to create json object
             string json=user.getJson();
 
 			//write string to file
-            System.IO.File.WriteAllText(user.Uname, json);
+            System.IO.File.WriteAllText(user.getName(), json);
 
-			if (FileUpload1.HasFile)
+			if (file.HasFile)
 			{
 				try
 				{
 					//saving the file
-					FileUpload1.SaveAs(FileUpload1.FileName);
-                    upload(FileUpload1,FileUpload1.FileName);
-                    upload(json, user.Uname);
+					file.SaveAs(file.FileName);
+                    upload(file,file.FileName,"image/jpg");
+                    upload(json, user.getName(),"json");
 
-                    //Create query string of users info and redirect user to next page
-                    Response.Redirect("newPage.aspx/?name=" + name + "&address=" + address + "&county=" + county + "&country=" + country + "&dob=" + dob+ "&number=" + number);
+					//Create query string of users info and redirect user to next page
+
+                    Response.Redirect("newPage.aspx/?name=" + name + "&address=" + address + "&county=" + county + "&country=" + country + "&dob=" + dob + "&number=" + number + "&file=" + file.FileName);
 
 				}
 				catch (Exception ex)
